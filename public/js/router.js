@@ -1,4 +1,4 @@
-angular.module('bookshelf', ['ui-router'])
+angular.module('bookshelf', ['ui.router'])
   .config(BookshelfRouter)
 
 function BookshelfRouter($urlRouterProvider, $stateProvider) {
@@ -8,6 +8,6 @@ function BookshelfRouter($urlRouterProvider, $stateProvider) {
   $stateProvider
   .state('index', {
     url: '/',
-    templateUrl: '/partials/index.html'
+    templateUrl: '/partials/shelf.html'
   })
 }
