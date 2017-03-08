@@ -1,0 +1,33 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "description": "MEAN stack mini-bookshelf app to track and organize a reading plan",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "7.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/currymich/bookshelf.git"
+  },
+  "keywords": [
+    "MEAN"
+  ],
+  "author": "currymich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/currymich/bookshelf/issues"
+  },
+  "homepage": "https://github.com/currymich/bookshelf#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mocha": "^3.2.0",
+    "mongoose": "^4.8.6",
+    "morgan": "^1.8.1",
+    "should": "^11.2.0"
+  }
+}
