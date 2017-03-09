@@ -10,10 +10,14 @@
     <title>Bookshelf</title>
   </head>
 
-  <body ng-controller="ShelfController as shelf">
+  <body ng-controller="ShelfController as shelves">
     {{2+2}}
 
     <h1>SHELF CONTROLLER WOOHOO</h1>
+
+    <div ng-controller="BooksController as books">
+      <button type="button" ng-click="books.getBook()"></button>
+    </div>
 
     <ui-view>
 
