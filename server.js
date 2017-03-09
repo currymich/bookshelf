@@ -1,6 +1,7 @@
 var express = require('express')
 var logger = require('morgan')
 var mongoose = require('mongoose')
+var bodyParser = require('body-parser')
 
 var app = express()
 
@@ -11,6 +12,8 @@ mongoose.connect('mongodb://localhost/bookshelf')
 
 app.use(express.static('public'));
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/books', booksController);
 app.use('/shelves', shelvesController);

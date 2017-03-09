@@ -12,12 +12,15 @@ function BooksController($http, $scope) {
   function newBook(){
     $http.post('/books', {title: self.title})
     .then(function(response){
-      console.log(response.data.book)
+      console.log(response)
     })
   }
 
   function getBook(){
     $http.get(`/books`)
+    .then(function(response){
+      console.log(response.data.books[0].volumeInfo.imageLinks.thumbnail)
+    })
   }
 
   self.newBook = newBook;
