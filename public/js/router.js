@@ -6,8 +6,8 @@ function BookshelfRouter($urlRouterProvider, $stateProvider) {
   $urlRouterProvider.otherwise('/')
 
   $stateProvider
-  .state('index', {
-    url: '/',
-    templateUrl: '/partials/shelf.html'
+  .state('new', {
+    url: '/books/new',
+    templateUrl: '/partials/new.html'
   })
 }

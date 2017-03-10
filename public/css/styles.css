@@ -1,3 +1,26 @@
-h3 {
-  color: red;
+.covers {
+  display: flex;
+  flex-flow: row;
 }
+
+.cover img {
+  height: 150px;
+  margin: 15px;
+}
+
+
+/* http://stackoverflow.com/questions/17541614/use-image-instead-of-radio-button */
+
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+/* end Stack overflow code*/

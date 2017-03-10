@@ -11,17 +11,19 @@
   </head>
 
   <body ng-controller="ShelfController as shelves">
-    {{2+2}}
 
-    <h1>SHELF CONTROLLER WOOHOO</h1>
+    <div class="shelf">
+      <h2>Books to read now:</h2>
+    </div>
 
-    <div ng-controller="BooksController as books">
-      <button type="button" ng-click="books.getBook()"></button>
+    <div class="shelf">
+      <h2>Books for later:</h2>
     </div>
 
     <ui-view>
 
     </ui-view>
+
   </body>
 
 </html>

@@ -1,0 +1,33 @@
+<div ng-controller="BooksController as books">
+<h2>Add a new book</h2>
+
+  <form ng-submit="books.getCovers()">
+    <label for="title">Title: </label>
+    <input type="text" name="title" ng-model="books.title">
+  </form>
+
+
+  <form ng-show="books.searchResults">
+
+    <h3>Type a cover URL or select one below</h3>
+    <div class="covers">
+      <div ng-repeat="book in searchResults" class="cover">
+        <label>
+          <input type="radio" value="{{$index}}" ng-model="selectedBook.index"
+          ng-model-options="{ getterSetter: true }">
+          <img ng-src="{{book.cover}}">
+        </label>
+      </div>
+    </div>
+  </form>
+
+  {{searchResults[selectedBook.index].cover}}
+  {{searchResults[selectedBook.index].description}}
+
+
+  <!-- <div>
+    <label for="description">Description: </label>
+    <textarea ng-model="books.description" name="description" rows="3" cols="40">{{books.selected.description}}</textarea>
+  </div> -->
+
+</div>
