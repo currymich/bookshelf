@@ -1,8 +1,6 @@
 var Schema = require('../db/schema');
 var mongoose = require('mongoose');
 
-var BookModel = mongoose.model('Book', Schema.Book);
+var Book = Schema.Book;
 
-module.exports = {
-  Book: BookModel
-};
+module.exports = Book;

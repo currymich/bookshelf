@@ -9,6 +9,8 @@ var BookSchema = new Schema({
   description: String
 });
 
+var BookModel = mongoose.model('Book', BookSchema);
+
 module.exports = {
-  Book: BookSchema
+  Book: BookModel
 }

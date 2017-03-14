@@ -18,19 +18,19 @@ function BooksController($http, $scope) {
   $scope.selectedBook = {'index': ''}
   $scope.searchResults = []
 
-  function newBook(book_info){
-    $http.post('/books', {title: self.title})
+  function newBook(){
+    $http.post('/books/new', {title: self.title, cover_url: self.cover_url || $scope.searchResults[$scope.selectedBook.index].cover, description: self.description || $scope.searchResults[$scope.selectedBook.index].description})
     .then(function(response){
       console.log(response)
     })
   }
 
   function getCovers(){
+    $scope.searchResults.splice(0);
     splitTitle = self.title.split(' ').join('+')
     $http.get(`/books/new/${splitTitle}`)
     .then(function(response){
       var books = response.data.books
-      self.searchResults = []
       books.forEach(function(book){
         $scope.searchResults.push({
           cover: book.volumeInfo.imageLinks.thumbnail,
